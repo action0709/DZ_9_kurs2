@@ -13,11 +13,11 @@ public class EmployeeService {
     private final Map<String, Employee> employees = new HashMap();
     final static private int MAX_SIZE = 5;
 
-    public Employee add(String firstName, String lastName) {
+    public Employee add(String firstName, String lastName,int department,double salary) {
         if (employees.size() >= MAX_SIZE) {
             throw new EmployeeStorageIsFullException();
         }
-        Employee employeeToAdd = new Employee(firstName, lastName);
+        Employee employeeToAdd = new Employee(firstName, lastName,department,salary);
         if (employees.containsKey(createKey(firstName,lastName))) {
             throw new EmployeeAlreadyAddedException();
         }
@@ -25,13 +25,13 @@ public class EmployeeService {
         return employeeToAdd;
     }
 
-    public Employee remove(String firstName, String lastName) {
-        Employee employeeToRemove = new Employee(firstName, lastName);
-        if (!employees.containsKey(createKey(firstName,lastName))) {
-            throw new EmployeeNotFoundException();
-        }
-        return employees.remove(createKey(firstName, lastName));
-    }
+//    public Employee remove(String firstName, String lastName) {
+//        Employee employeeToRemove = new Employee(firstName, lastName);
+//        if (!employees.containsKey(createKey(firstName,lastName))) {
+//            throw new EmployeeNotFoundException();
+//        }
+//        return employees.remove(createKey(firstName, lastName));
+//    }
 
     public Employee find(String firstName, String lastName) {
         if (!employees.containsKey(createKey(firstName,lastName))){

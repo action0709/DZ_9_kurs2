@@ -7,9 +7,15 @@ public class Employee {
     private String firstName;
     private String lastName;
 
-    public Employee(String firstName, String lastName) {
+    private int department;
+    private double salary;
+
+
+    public Employee(String firstName, String lastName, int department, double salary) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.department = department;
+        this.salary = salary;
     }
 
     public String getFirstName() {
@@ -27,7 +33,24 @@ public class Employee {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-@Override
+
+    public int getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(int department) {
+        this.department = department;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    @Override
 public boolean equals (Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
