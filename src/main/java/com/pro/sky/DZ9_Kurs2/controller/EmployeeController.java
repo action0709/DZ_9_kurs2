@@ -46,11 +46,11 @@ public class EmployeeController {
 return employeeService.getAll();
     }
 
-    @SpringBootApplication
-    public static class Dz6Kurs2Application {
-        public static void main(String[] args) {
-            SpringApplication.run(DZ9_Kurs2Application.class, args);
-        }
-
-    }
+//    @SpringBootApplication
+//    public static class Dz9Kurs2Application {
+//        public static void main(String[] args) {
+//            SpringApplication.run(DZ9_Kurs2Application.class, args);
+//        }
+//
+//    }
 }
