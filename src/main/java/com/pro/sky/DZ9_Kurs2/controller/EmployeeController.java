@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -22,16 +23,19 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-@GetMapping("/add")
-    public Employee add(@RequestParam("firstName")String firstName, @RequestParam("lastName")String lastName)
-{
-return employeeService.add(firstName,lastName);
-}
-    @GetMapping("/remove")
-    public Employee remove(@RequestParam("firstName")String firstName, @RequestParam("lastName")String lastName)
+    @GetMapping("/add")
+    public Employee add(@RequestParam("firstName") String firstName,
+                        @RequestParam("lastName") String lastName,
+                        @RequestParam("department") int department,
+                        @RequestParam("salary") double salary)
     {
-        return employeeService.remove(firstName,lastName);
+        return employeeService.add(new Employee(firstName, lastName,department,salary));
     }
+//    @GetMapping("/remove")
+//    public Employee remove(@RequestParam("firstName")String firstName, @RequestParam("lastName")String lastName)
+//    {
+//        return employeeService.remove(firstName,lastName);
+//    }
     @GetMapping("/find")
     public Employee find(@RequestParam("firstName")String firstName, @RequestParam("lastName")String lastName)
     {
@@ -39,15 +43,15 @@ return employeeService.add(firstName,lastName);
     }
 
     @GetMapping("/all")
-    public List<Employee> all() {
+    public Collection<Employee> all() {
 return employeeService.getAll();
     }
 
-    @SpringBootApplication
-    public static class Dz6Kurs2Application {
-        public static void main(String[] args) {
-            SpringApplication.run(DZ9_Kurs2Application.class, args);
-        }
-
-    }
+//    @SpringBootApplication
+//    public static class Dz9Kurs2Application {
+//        public static void main(String[] args) {
+//            SpringApplication.run(DZ9_Kurs2Application.class, args);
+//        }
+//
+//    }
 }
