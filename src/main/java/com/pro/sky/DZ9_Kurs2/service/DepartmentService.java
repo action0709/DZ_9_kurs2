@@ -5,6 +5,9 @@ import com.pro.sky.DZ9_Kurs2.model.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class DepartmentService {
@@ -25,5 +28,17 @@ public class DepartmentService {
                 .filter(employee -> employee.getDepartment() == department)
                 .min(Comparator.comparingDouble(Employee::getSalary))
                 .orElseThrow(EmployeeNotFoundException::new);
+    }
+
+    public List<Employee> getAll (int department){
+        return employeeService.getAll().stream()
+                .filter(employee -> employee.getDepartment() == department)
+                .collect(Collectors.toList());
+
+    }
+
+    public Map<Integer,List<Employee>> getAll() {
+        return employeeService.getAll().stream()
+                .collect(Collectors.groupingBy(Employee::getDepartment));
     }
 }
