@@ -1,7 +1,7 @@
-package com.pro.sky.DZ9_Kurs2.service;
+package com.pro.sky.DZ11_Kurs2.service;
 
-import com.pro.sky.DZ9_Kurs2.exception.EmployeeNotFoundException;
-import com.pro.sky.DZ9_Kurs2.model.Employee;
+import com.pro.sky.DZ11_Kurs2.exception.EmployeeNotFoundException;
+import com.pro.sky.DZ11_Kurs2.model.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;

@@ -1,9 +1,11 @@
-package com.pro.sky.DZ9_Kurs2.service;
+package com.pro.sky.DZ11_Kurs2.service;
 
-import com.pro.sky.DZ9_Kurs2.exception.EmployeeAlreadyAddedException;
-import com.pro.sky.DZ9_Kurs2.exception.EmployeeNotFoundException;
-import com.pro.sky.DZ9_Kurs2.exception.EmployeeStorageIsFullException;
-import com.pro.sky.DZ9_Kurs2.model.Employee;
+import com.pro.sky.DZ11_Kurs2.exception.EmployeeAlreadyAddedException;
+import com.pro.sky.DZ11_Kurs2.exception.EmployeeNotFoundException;
+import com.pro.sky.DZ11_Kurs2.exception.EmployeeStorageIsFullException;
+import com.pro.sky.DZ11_Kurs2.exception.InvalidDataException;
+import com.pro.sky.DZ11_Kurs2.model.Employee;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -26,6 +28,12 @@ public Collection<Employee> getAll() {
     return employees.values();
 }
     public Employee add(Employee employee) {
+        if(!StringUtils.isAlpha(employee.getFirstName())
+                ||!StringUtils.isAlpha(employee.getLastName())) {
+            throw new InvalidDataException();
+
+        }
+        }
         if (employees.size() >= MAX_SIZE) {
             throw new EmployeeStorageIsFullException();
         }
@@ -57,6 +65,14 @@ public Collection<Employee> getAll() {
     }
     private static String createKey(Employee employee) {
         return createKey(employee.getFirstName(),employee.getLastName());
+    }
+
+    private static void correctCase (Employee employee){
+        String correctedFirstName = StringUtils.capitalize(employee.getFirstName().toLowerCase());
+    employee.setFirstName(correctedFirstName);
+        String correctedLastName = StringUtils.capitalize(employee.getLastName().toLowerCase());
+        employee.setLastName(correctedLastName);
+
     }
 }
 

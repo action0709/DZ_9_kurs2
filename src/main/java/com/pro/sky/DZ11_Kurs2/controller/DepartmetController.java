@@ -1,8 +1,7 @@
-package com.pro.sky.DZ9_Kurs2.controller;
+package com.pro.sky.DZ11_Kurs2.controller;
 
-import com.pro.sky.DZ9_Kurs2.model.Employee;
-import com.pro.sky.DZ9_Kurs2.service.DepartmentService;
-import org.springframework.stereotype.Service;
+import com.pro.sky.DZ11_Kurs2.model.Employee;
+import com.pro.sky.DZ11_Kurs2.service.DepartmentService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
