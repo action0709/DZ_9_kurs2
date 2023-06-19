@@ -7,5 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DZ11_kurs2Application {
     public static void main (String[] args){
         SpringApplication.run(DZ11_kurs2Application.class,args);
+
     }
 }
