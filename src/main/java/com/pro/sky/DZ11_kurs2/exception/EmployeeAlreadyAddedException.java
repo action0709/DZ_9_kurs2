@@ -1,4 +1,4 @@
-package com.pro.sky.DZ9_Kurs2.exception;
+package com.pro.sky.DZ11_kurs2.exception;
 
 public class EmployeeAlreadyAddedException extends RuntimeException{
     public EmployeeAlreadyAddedException() {
