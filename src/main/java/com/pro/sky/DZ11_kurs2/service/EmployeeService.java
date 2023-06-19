@@ -31,7 +31,6 @@ public Collection<Employee> getAll() {
         if(!StringUtils.isAlpha(employee.getFirstName())
                 ||!StringUtils.isAlpha(employee.getLastName())) {
             throw new InvalidDataException();
-
         }
 
         if (employees.size() >= MAX_SIZE) {
@@ -40,6 +39,7 @@ public Collection<Employee> getAll() {
         if (employees.containsKey(createKey(employee))) {
             throw new EmployeeAlreadyAddedException();
         }
+        correctCase(employee);
         employees.put(createKey(employee),employee);
         return employee;
     }
@@ -72,7 +72,6 @@ public Collection<Employee> getAll() {
     employee.setFirstName(correctedFirstName);
         String correctedLastName = StringUtils.capitalize(employee.getLastName().toLowerCase());
         employee.setLastName(correctedLastName);
-
     }
 }
 
