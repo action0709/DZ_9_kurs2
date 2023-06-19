@@ -1,5 +1,6 @@
 package com.pro.sky.DZ11_kurs2;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
