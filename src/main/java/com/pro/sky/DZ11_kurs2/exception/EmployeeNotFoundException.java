@@ -1,4 +1,4 @@
-package com.pro.sky.DZ11_Kurs2.exception;
+package com.pro.sky.DZ11_kurs2.exception;
 
 public class EmployeeNotFoundException extends RuntimeException{
     public EmployeeNotFoundException() {

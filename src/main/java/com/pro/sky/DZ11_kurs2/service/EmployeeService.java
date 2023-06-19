@@ -1,10 +1,10 @@
-package com.pro.sky.DZ11_Kurs2.service;
+package com.pro.sky.DZ11_kurs2.service;
 
-import com.pro.sky.DZ11_Kurs2.exception.EmployeeAlreadyAddedException;
-import com.pro.sky.DZ11_Kurs2.exception.EmployeeNotFoundException;
-import com.pro.sky.DZ11_Kurs2.exception.EmployeeStorageIsFullException;
-import com.pro.sky.DZ11_Kurs2.exception.InvalidDataException;
-import com.pro.sky.DZ11_Kurs2.model.Employee;
+import com.pro.sky.DZ11_kurs2.exception.EmployeeAlreadyAddedException;
+import com.pro.sky.DZ11_kurs2.exception.EmployeeNotFoundException;
+import com.pro.sky.DZ11_kurs2.exception.EmployeeStorageIsFullException;
+import com.pro.sky.DZ11_kurs2.exception.InvalidDataException;
+import com.pro.sky.DZ11_kurs2.model.Employee;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +33,7 @@ public Collection<Employee> getAll() {
             throw new InvalidDataException();
 
         }
-        }
+
         if (employees.size() >= MAX_SIZE) {
             throw new EmployeeStorageIsFullException();
         }

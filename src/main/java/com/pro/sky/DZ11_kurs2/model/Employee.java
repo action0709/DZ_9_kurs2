@@ -1,4 +1,4 @@
-package com.pro.sky.DZ11_Kurs2.model;
+package com.pro.sky.DZ11_kurs2.model;
 
 import java.util.Objects;
 

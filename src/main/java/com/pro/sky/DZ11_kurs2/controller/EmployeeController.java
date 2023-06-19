@@ -1,7 +1,7 @@
-package com.pro.sky.DZ11_Kurs2.controller;
+package com.pro.sky.DZ11_kurs2.controller;
 
-import com.pro.sky.DZ11_Kurs2.model.Employee;
-import com.pro.sky.DZ11_Kurs2.service.EmployeeService;
+import com.pro.sky.DZ11_kurs2.model.Employee;
+import com.pro.sky.DZ11_kurs2.service.EmployeeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,11 +43,5 @@ public class EmployeeController {
 return employeeService.getAll();
     }
 
-//    @SpringBootApplication
-//    public static class Dz9Kurs2Application {
-//        public static void main(String[] args) {
-//            SpringApplication.run(DZ9_Kurs2Application.class, args);
-//        }
-//
-//    }
+
 }

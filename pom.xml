@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pro.sky</groupId>
-	<artifactId>DZ11_Kurs2</artifactId>
+	<artifactId>DZ11_kurs2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<firstName>DZ9_Kurs2</firstName>
+	<firstName>DZ11_kurs2</firstName>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>

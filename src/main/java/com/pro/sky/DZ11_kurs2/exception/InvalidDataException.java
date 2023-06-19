@@ -1,4 +1,4 @@
-package com.pro.sky.DZ11_Kurs2.exception;
+package com.pro.sky.DZ11_kurs2.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
